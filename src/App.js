@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+//프로파일 컴포넌트 참조
+import Profile from "./Profile";
+
+//state 컴포넌트 참조
+import Say from "./Say";
+
+import Say2 from "./Say2";
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        {/* 프로필 자식 컴포넌트 추가 */}
+        <Profile
+          name="song"
+          telephone="010-1234-1234"
+          age={20}
+          email="song@test.co.kr"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          프로필
+        </Profile>
+
+        <hr></hr>
+        <Say></Say>
+
+        <Say2></Say2>
+      </div>
+    );
+  }
 }
 
 export default App;
